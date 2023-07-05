@@ -3,6 +3,7 @@ import Image from 'next/image'
 import React from 'react'
 import { motion , useScroll , useTransform  } from 'framer-motion'
 import { useRef } from 'react'
+import { inflate } from 'zlib'
 
 
 {/* this program will return a beautiful presentation with the input of user scrolling in order to satisfy the user  */}
@@ -23,11 +24,17 @@ export default function Hero() {
     <motion.main 
     style={{opacity }}
     ref = {targetRef} 
-    className="py-16 h-screen relative justify-center bg-gradient-to-tl from-black to-gray-950 ">
+    className="relative justify-center h-screen py-16 bg-gradient-to-tl from-black to-gray-950 ">
       <motion.div 
       style={{scale , position}}
-      className=' flex w-full justify-center'>
-        <h1 className='text-white py-8 text-6xl '>Beautifully Styled Website</h1>
+      className='flex justify-center w-full '>
+        <motion.h1 
+        
+        transition={{
+          repeat: Infinity , 
+          duration : 1
+        }}     
+        className='max-w-3xl py-8 text-7xl'>Beautifully <br /> Styled Website</motion.h1>
       </motion.div>
     </motion.main>
     
